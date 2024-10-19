@@ -94,7 +94,7 @@
         };
 
         nav_layer {
-            label = "NAVI";
+            label = "NAV";
             bindings = <
         &trans  &trans    &kp UP    &trans     &trans    &trans  &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK  &trans
         &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans    &trans  &hmr RSHFT INS    &hmr RCTRL HOME  &hmr RALT PG_UP   &kp RGUI
@@ -109,7 +109,7 @@
         &kp EXCL   &kp AT         &kp HASH              &kp DLLR              &kp PRCNT         &kp CARET        &kp AMPS           &kp ASTRK              &kp EQUAL          &kp PLUS
         &kp COLON  &kp SEMICOLON  &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET      &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp APOS           &kp MINUS
 &trans  &kp HASH   &kp PIPE       &kp LESS_THAN         &kp NON_US_BACKSLASH  &trans            &trans           &kp SLASH          &kp GREATER_THAN       &kp DOUBLE_QUOTES  &kp TILDE  &trans
-                                  &trans                &gif                  &mo ADJ           &trans           &trans             &trans
+                                  &trans                &gif                  &mo 3             &none            &trans             &trans
             >;
         };
 
@@ -120,6 +120,16 @@
         &bootloader  &bt BT_NXT  &trans        &trans  &trans    &trans  &kp F4  &kp F5  &kp F6  &kp F11
 &trans  &trans       &bt BT_PRV  &trans        &trans  &trans    &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans
                                  &trans        &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        layer_4 {
+            label = "NAVI2";
+            bindings = <
+        &trans  &kp HOME  &kp UP    &kp PG_UP  &trans    &trans  &kp KP_N7              &kp KP_N8        &kp KP_N9             &kp KP_PLUS
+        &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans    &trans  &mt RSHFT KP_NUMBER_4  &mt RCTRL KP_N5  &mt RALT KP_NUMBER_6  &mt RGUI KP_MINUS
+&trans  &trans  &kp END   &trans    &kp PG_DN  &trans    &trans  &kp KP_N1              &kp KP_N2        &kp KP_N3             &kp KP_MULTIPLY    &trans
+                          &trans    &trans     &none     &trans  &kp KP_N0              &trans
             >;
         };
     };
