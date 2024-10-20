@@ -42,22 +42,6 @@
         };
     };
 
-    macros {
-        gif: gif {
-            label = "giphy";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N2>,
-                <&macro_release>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp G &kp I &kp F>;
-        };
-    };
 
 
     behaviors {
@@ -119,7 +103,7 @@
         &kp EXCL   &kp AT         &kp HASH              &kp DLLR              &kp PRCNT         &kp CARET        &kp AMPS           &kp ASTRK              &kp EQUAL          &kp PLUS
         &kp COLON  &kp SEMICOLON  &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET      &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp APOS           &kp MINUS
 &trans  &kp HASH   &kp PIPE       &kp LESS_THAN         &kp NON_US_BACKSLASH  &trans            &trans           &kp SLASH          &kp GREATER_THAN       &kp DOUBLE_QUOTES  &kp TILDE  &trans
-                                  &trans                &gif                  &mo 4             &none            &trans             &trans
+                                  &trans                &trans                &mo 4             &none            &trans             &trans
             >;
         };
 
