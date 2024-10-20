@@ -8,6 +8,8 @@
 #define SYM  2
 #define ADJ  3
 
+#include "zmk-helpers/key-labels/totem.h"
+
 &mt {
     quick-tap-ms = <100>;
     global-quick-tap;
