@@ -104,8 +104,8 @@
             label = "SYM";
             bindings = <
         &kp EXCL         &kp AT               &kp HASH              &kp DLLR              &kp PRCNT         &kp CARET        &kp AMPS           &kp ASTRK              &kp EQUAL          &kp PLUS
-        &kp LS(S)        &kp S                &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET      &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp APOS           &kp MINUS
-&trans  &kp NON_US_HASH  &kp LS(NON_US_BSLH)  &kp LS(W)             &kp NON_US_BACKSLASH  &trans            &trans           &kp Z              &kp LS(V)              &kp DOUBLE_QUOTES  &kp LS(NON_US_HASH)  &trans
+        &kp LS(Z)        &kp Z                &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET      &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp APOS           &kp MINUS
+&trans  &kp NON_US_HASH  &kp LS(NON_US_BSLH)  &kp LS(W)             &kp NON_US_BACKSLASH  &trans            &trans           &kp Z              &kp LS(E)              &kp DOUBLE_QUOTES  &kp LS(NON_US_HASH)  &trans
                                               &trans                &trans                &mo 4             &none            &trans             &trans
             >;
         };
