@@ -76,6 +76,7 @@
             label = "SMART_SHFT";
             bindings = <&sk LSHFT>, <&caps_word>;
 
+            #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
     };
