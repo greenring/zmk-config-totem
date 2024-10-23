@@ -30,16 +30,6 @@
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
-
-        CapWord {
-            bindings = <&caps_word>;
-            key-positions = <2 7>;
-        };
-
-        CapLock {
-            bindings = <&kp CAPS>;
-            key-positions = <25 23 28>;
-        };
     };
 
     behaviors {
