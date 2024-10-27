@@ -114,6 +114,27 @@
             label = "NEW_SPACE";
         };
 
+        new_tab: new_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &caps_layer &lt 1 TAB>;
+            label = "NEW_TAB";
+        };
+
+        new_enter: new_enter {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &caps_layer &lt 3 ENTER>;
+            label = "NEW_ENTER";
+        };
+
+        new_backspace: new_backspace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &caps_layer &kp BACKSPACE>;
+            label = "NEW_ENTER";
+        };
+
         caps_layer: caps_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -182,7 +203,7 @@
            &kp Q        &kp W        &kp E         &kp R         &kp T          &kp Y          &kp U         &kp I         &kp O        &kp P
            &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G          &kp H          &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMICOLON
 &kp GRAVE  &kp Z        &kp X        &kp C         &kp V         &kp B          &kp N          &kp M         &kp COMMA     &kp PERIOD   &kp SLASH            &kp SQT
-                                     &trans        &lt 1 TAB     &lt 3 ENTER    &kp BACKSPACE  &new_space    &smart_shft
+                                     &trans        &new_tab      &new_enter     &new_backspace &new_space    &caps_layer
             >;
         };
     };
