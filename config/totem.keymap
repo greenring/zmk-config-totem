@@ -31,19 +31,39 @@
             bindings = <&kp ESC>;
         };
 
-        CapWord {
-            bindings = <&caps_word>;
-            key-positions = <2 7>;
+        combo_semicolon {
+            bindings = <&kp Z>;
+            key-positions = <2 3>;
         };
 
-        CapLock {
-            bindings = <&kp CAPS>;
-            key-positions = <25 23 28>;
+        combo_colon {
+            bindings = <&kp LS(Z)>;
+            key-positions = <23 24>;
         };
 
-        CapChar {
-            bindings = <&sk LSHIFT>;
-            key-positions = <14 15>;
+        combo_hyphen {
+            bindings = <&kp MINUS>;
+            key-positions = <27 28>;
+        };
+
+        combo_apos {
+            bindings = <&kp SQT>;
+            key-positions = <6 7>;
+        };
+
+        combo_quote {
+            bindings = <&kp AT>;
+            key-positions = <7 8>;
+        };
+
+        combo_underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <28 29>;
+        };
+
+        combo_exclamation {
+            bindings = <&kp EXCLAMATION>;
+            key-positions = <1 2>;
         };
     };
 
@@ -58,7 +78,7 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
             flavor = "balanced";
-            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;
         };
 
@@ -72,8 +92,17 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
             flavor = "balanced";
-            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
+        };
+
+        smart_shft: smart_shft {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SMART_SHFT";
+            bindings = <&sk LSHFT>, <&caps_word>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
         };
     };
 
@@ -83,10 +112,10 @@
         base_layer {
             label = "BASE";
             bindings = <
-           &kp Q        &kp W        &kp E         &kp R         &kp T          &kp Y        &kp U          &kp I         &kp O        &kp P
-           &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G          &kp H        &hmr RSHFT J   &hmr RCTRL K  &hmr RALT L  &mt RGUI SEMICOLON
-&kp GRAVE  &kp Z        &kp X        &kp C         &kp V         &kp B          &kp N        &kp M          &kp COMMA     &kp PERIOD   &kp SLASH           &kp SQT
-                                     &kp TAB       &lt 3 TAB     &lt 1 ENTER    &lt 2 SPACE  &kp BACKSPACE  &kp BSPC
+           &kp Q        &kp W        &kp E         &kp R         &kp T          &kp Y          &kp U         &kp I         &kp O        &kp P
+           &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G          &kp H          &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMICOLON
+&kp GRAVE  &kp Z        &kp X        &kp C         &kp V         &kp B          &kp N          &kp M         &kp COMMA     &kp PERIOD   &kp SLASH            &kp SQT
+                                     &trans        &lt 1 TAB     &lt 3 ENTER    &kp BACKSPACE  &lt 2 SPACE   &smart_shft
             >;
         };
 
@@ -96,7 +125,7 @@
         &trans  &trans    &kp UP    &trans     &trans    &trans  &kp PRINTSCREEN  &kp SCROLLLOCK   &kp PAUSE_BREAK  &trans
         &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans    &trans  &hmr RSHFT INS   &hmr RCTRL HOME  &hmr RALT PG_UP  &kp RGUI
 &trans  &trans  &trans    &trans    &trans     &trans    &trans  &kp DELETE       &kp END          &kp PG_DN        &trans    &trans
-                          &trans    &trans     &none     &trans  &trans           &trans
+                          &trans    &none      &trans    &trans  &trans           &trans
             >;
         };
 
@@ -105,8 +134,8 @@
             bindings = <
         &kp EXCL         &kp AT               &kp HASH              &kp DLLR              &kp PRCNT         &kp CARET        &kp AMPS           &kp ASTRK              &kp EQUAL          &kp PLUS
         &kp LS(Z)        &kp Z                &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET      &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp APOS           &kp MINUS
-&trans  &kp NON_US_HASH  &kp LS(NON_US_BSLH)  &kp LS(W)             &kp NON_US_BACKSLASH  &trans            &trans           &kp Q              &kp LS(E)              &kp DOUBLE_QUOTES  &kp LS(NON_US_HASH)  &trans
-                                              &trans                &trans                &mo 4             &none            &trans             &trans
+&trans  &kp NON_US_HASH  &kp LS(NON_US_BSLH)  &kp LS(W)             &kp NON_US_BACKSLASH  &trans            &kp UNDER        &kp Q              &kp LS(E)              &kp DOUBLE_QUOTES  &kp LS(NON_US_HASH)  &trans
+                                              &trans                &trans                &mo 4             &trans           &none              &trans
             >;
         };
 
