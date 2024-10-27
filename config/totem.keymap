@@ -119,13 +119,13 @@
 
     macros {
         macro_key_uncap: macro_key_uncap {
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&none &macro_toggle_caps_layer &kp>;
         };
 
         macro_layer_uncap: macro_layer_uncap {
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
                 <&none &macro_toggle_caps_layer>,
