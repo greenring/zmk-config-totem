@@ -141,7 +141,7 @@
             bindings 
                 = <&none &caps_layer>
                 , <&macro_press &mo 2>
-                , <&macro_pause_for_release>;
+                , <&macro_pause_for_release>
                 , <&macro_release &mo 2>;
             label = "NEW_SYM_LAYER";
         };
