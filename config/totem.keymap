@@ -121,7 +121,7 @@
         macro_key_uncap: macro_key_uncap {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&none &macro_toggle_caps_layer &kp>;
+            bindings = <&none &macro_toggle_caps_layer &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
         };
 
         macro_layer_uncap: macro_layer_uncap {
