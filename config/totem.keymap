@@ -117,8 +117,9 @@
         caps_layer: caps_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &tog 5 &kp CAPSLOCK>;
+            bindings = <&none &kp CAPSLOCK &tog 5>;
             label = "CAPS_LAYER";
+            wait-ms = <1>;
         };
     };
 
