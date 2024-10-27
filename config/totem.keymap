@@ -99,7 +99,7 @@
         smart_shft: smart_shft {
             compatible = "zmk,behavior-mod-morph";
             label = "SMART_SHFT";
-            bindings = <&sk LSHFT>, <&caps_layer>;
+            bindings = <&sk LSHFT>, <&macro_toggle_caps_layer>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
@@ -108,7 +108,7 @@
         new_behavior: new_behavior {
             compatible = "zmk,behavior-hold-tap";
             label = "NEW_BEHAVIOR";
-            bindings = <&new_sym_layer>, <&new_space>;
+            bindings = <&macro_sym_layer_uncap>, <&macro_space_uncap>;
 
             #binding-cells = <2>;
             tapping-term-ms = <280>;
@@ -119,118 +119,111 @@
     };
 
     macros {
-        new_space: new_space {
+        macro_space_uncap: macro_space_uncap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &caps_layer &kp SPACE>;
-            label = "NEW_SPACE";
+            bindings = <&none &macro_toggle_caps_layer &kp SPACE>;
         };
 
-        new_tab: new_tab {
+        macro_tab_uncap: macro_tab_uncap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &caps_layer &lt 1 TAB>;
-            label = "NEW_TAB";
+            bindings = <&none &macro_toggle_caps_layer &lt 1 TAB>;
         };
 
-        new_enter: new_enter {
+        macro_enter_uncap:macro_enter_uncap{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &caps_layer &lt 3 ENTER>;
-            label = "NEW_ENTER";
-        };
-
-        new_backspace: new_backspace {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &caps_layer &kp BACKSPACE>;
-            label = "NEW_BACKSPACE";
-        };
-
-        new_sym_layer: new_sym_layer {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&none &caps_layer>,
-                <&macro_press>,
-                <&mo 2>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&mo 2>;
-
-            label = "NEW_SYM_LAYER";
-        };
-
-        caps_layer: caps_layer {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp CAPSLOCK &tog 5>;
-            label = "CAPS_LAYER";
-            wait-ms = <1>;
-        };
+            bindings = <&none &macro_toggle_caps_layer &lt 3 ENTER>;
     };
 
-    keymap {
-        compatible = "zmk,keymap";
+    macro_backspace_uncap: macro_backspace_uncap {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&none &macro_toggle_caps_layer &kp BACKSPACE>;
+    };
 
-        base_layer {
-            label = "BASE";
-            bindings = <
+    macro_sym_layer_uncap: macro_sym_layer_uncap {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings =
+            <&none &macro_toggle_caps_layer>,
+            <&macro_press>,
+            <&mo 2>,
+            <&macro_pause_for_release>,
+            <&macro_release>,
+            <&mo 2>;
+    };
+
+    macro_toggle_caps_layer: macro_toggle_caps_layer {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&none &kp CAPSLOCK &tog 5>;
+        wait-ms = <1>;
+    };
+};
+
+keymap {
+    compatible = "zmk,keymap";
+
+    base_layer {
+        label = "BASE";
+        bindings = <
            &kp Q        &kp W        &kp E         &kp R         &kp T          &kp Y          &kp U         &kp I         &kp O        &kp P
            &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G          &kp H          &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMICOLON
 &kp GRAVE  &kp Z        &kp X        &kp C         &kp V         &kp B          &kp N          &kp M         &kp COMMA     &kp PERIOD   &kp SLASH            &kp SQT
                                      &trans        &lt 1 TAB     &lt 3 ENTER    &kp BACKSPACE  &lt 2 SPACE   &smart_shft
-            >;
-        };
+        >;
+    };
 
-        nav_layer {
-            label = "NAV";
-            bindings = <
+    nav_layer {
+        label = "NAV";
+        bindings = <
         &trans  &trans    &kp UP    &trans     &trans    &trans  &kp PRINTSCREEN  &kp SCROLLLOCK   &kp PAUSE_BREAK  &trans
         &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans    &trans  &hmr RSHFT INS   &hmr RCTRL HOME  &hmr RALT PG_UP  &kp RGUI
 &trans  &trans  &trans    &trans    &trans     &trans    &trans  &kp DELETE       &kp END          &kp PG_DN        &trans    &trans
                           &trans    &none      &trans    &trans  &trans           &trans
-            >;
-        };
+        >;
+    };
 
-        sim_layer {
-            label = "SYM";
-            bindings = <
+    sim_layer {
+        label = "SYM";
+        bindings = <
         &kp EXCL         &kp AT               &kp HASH              &kp DLLR              &kp PRCNT         &kp CARET        &kp AMPS           &kp ASTRK              &kp EQUAL          &kp PLUS
         &kp LS(Z)        &kp Z                &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET      &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp APOS           &kp MINUS
 &trans  &kp NON_US_HASH  &kp LS(NON_US_BSLH)  &kp LS(W)             &kp NON_US_BACKSLASH  &trans            &kp UNDER        &kp Q              &kp LS(E)              &kp DOUBLE_QUOTES  &kp LS(NON_US_HASH)  &trans
                                               &trans                &trans                &mo 4             &trans           &none              &trans
-            >;
-        };
+        >;
+    };
 
-        num_layer {
-            label = "NUM";
-            bindings = <
+    num_layer {
+        label = "NUM";
+        bindings = <
         &trans  &trans  &trans  &trans  &trans    &trans  &kp KP_N7        &kp KP_N8        &kp KP_N9        &kp KP_PLUS
         &trans  &trans  &trans  &trans  &trans    &trans  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp KP_N1        &kp KP_N2        &kp KP_N3        &kp KP_MULTIPLY  &kp SLASH
                         &trans  &trans  &none     &trans  &kp KP_N0        &trans
-            >;
-        };
+        >;
+    };
 
-        adjust_layer {
-            label = "ADJ";
-            bindings = <
+    adjust_layer {
+        label = "ADJ";
+        bindings = <
         &sys_reset   &bt BT_CLR  &out OUT_TOG  &trans  &trans    &trans  &kp F7  &kp F8  &kp F9  &kp F12
         &bootloader  &bt BT_NXT  &trans        &trans  &trans    &trans  &kp F4  &kp F5  &kp F6  &kp F11
 &trans  &trans       &bt BT_PRV  &trans        &trans  &trans    &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans
                                  &trans        &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        cap_layer {
-            label = "CAP";
-            bindings = <
-           &kp Q        &kp W        &kp E         &kp R         &kp T         &kp Y           &kp U              &kp I           &kp O        &kp P
-           &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G         &kp H           &hmr RSHFT J       &hmr RCTRL K    &hmr RALT L  &hmr RGUI SEMICOLON
-&kp GRAVE  &kp Z        &kp X        &kp C         &kp V         &kp B         &kp N           &kp M              &kp COMMA       &kp PERIOD   &kp SLASH            &kp SQT
-                                     &trans        &new_tab      &new_enter    &new_backspace  &new_behavior 0 0  &new_sym_layer
-            >;
-        };
+        >;
     };
+
+    cap_layer {
+        label = "CAP";
+        bindings = <
+           &kp Q        &kp W        &kp E         &kp R             &kp T                 &kp Y                   &kp U              &kp I                   &kp O        &kp P
+           &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F      &kp G                 &kp H                   &hmr RSHFT J       &hmr RCTRL K            &hmr RALT L  &hmr RGUI SEMICOLON
+&kp GRAVE  &kp Z        &kp X        &kp C         &kp V             &kp B                 &kp N                   &kp M              &kp COMMA               &kp PERIOD   &kp SLASH            &kp SQT
+                                     &trans        &macro_tab_uncap  &macro_enter_uncap    &macro_backspace_uncap  &new_behavior 0 0  &macro_sym_layer_uncap
+        >;
+    };
+};
 };
