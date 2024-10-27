@@ -132,7 +132,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&none &caps_layer &kp BACKSPACE>;
-            label = "NEW_ENTER";
+            label = "NEW_BACKSPACE";
         };
 
         caps_layer: caps_layer {
