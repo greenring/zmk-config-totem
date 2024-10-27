@@ -50,6 +50,21 @@
             bindings = <&kp SQT>;
             key-positions = <6 7>;
         };
+
+        combo_quote {
+            bindings = <&kp AT>;
+            key-positions = <7 8>;
+        };
+
+        combo_underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <28 29>;
+        };
+
+        combo_exclamation {
+            bindings = <&kp EXCLAMATION>;
+            key-positions = <1 2>;
+        };
     };
 
     behaviors {
