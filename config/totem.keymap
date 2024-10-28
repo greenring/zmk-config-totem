@@ -22,7 +22,12 @@
 };
 
 &caps_word {
-    shift-list = <COMMA PERIOD SLASH>;
+    no-default-keys;
+    continue-list = <UNDERSCORE BACKSPACE DELETE SQT MINUS>;
+    shift-list = 
+        <R T Y U I O P>,
+        <A S D F G H J K L SEMICOLON>,
+        <X J K X B M COMMA PERIOD SLASH>;
 };
 
 / {
