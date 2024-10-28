@@ -21,6 +21,10 @@
     release-after-ms = <900>;
 };
 
+&caps_word {
+    shift-list = <COMMA PERIOD SLASH>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
