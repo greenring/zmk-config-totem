@@ -40,14 +40,19 @@
             bindings = <&kp ESC>;
         };
 
-        combo_exclamation {
+        exclamation {
             bindings = <&kp EXCLAMATION>;
             key-positions = <1 2>;
         };
 
-        combo_semicolon {
+        semicolon {
             bindings = <&kp Z>;
             key-positions = <2 3>;
+        };
+
+        dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <1 11>;
         };
 
         lpar {
@@ -75,6 +80,11 @@
             key-positions = <12 13>;
         };
 
+        hash {
+            bindings = <&kp NON_US_HASH>;
+            key-positions = <11 22>;
+        };
+
         lbrac {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <12 23>;
@@ -90,17 +100,17 @@
             key-positions = <14 25>;
         };
 
-        combo_colon {
+        colon {
             bindings = <&kp LS(Z)>;
             key-positions = <23 24>;
         };
 
-        combo_apos {
+        apos {
             bindings = <&kp SQT>;
             key-positions = <6 7>;
         };
 
-        combo_quote {
+        quote {
             bindings = <&kp AT>;
             key-positions = <7 8>;
         };
@@ -118,6 +128,11 @@
         rpar {
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <7 17>;
+        };
+
+        caret {
+            bindings = <&kp CARET>;
+            key-positions = <8 18>;
         };
 
         hyphen {
@@ -140,7 +155,12 @@
             key-positions = <17 28>;
         };
 
-        combo_underscore {
+        amp {
+            bindings = <&kp AMPS>;
+            key-positions = <29 18>;
+        };
+
+        underscore {
             bindings = <&kp UNDERSCORE>;
             key-positions = <27 28>;
         };
@@ -199,7 +219,7 @@
                &kp Q        &kp W        &kp E         &kp R         &kp T          &kp Y          &kp U         &kp I         &kp O        &kp P
                &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G          &kp H          &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMICOLON
 &kp BACKSLASH  &kp Z        &kp X        &kp C         &kp V         &kp B          &kp N          &kp M         &kp COMMA     &kp PERIOD   &kp SLASH            &kp SQT
-                                         &trans        &lt 1 TAB     &lt 3 ENTER    &kp BACKSPACE  &lt 2 SPACE   &smart_shft
+                                         &kp DELETE    &lt 1 TAB     &lt 2 ENTER    &kp BACKSPACE  &kp SPACE     &smart_shft
             >;
         };
 
@@ -210,16 +230,6 @@
         &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans    &trans  &hmr RSHFT INS   &hmr RCTRL HOME  &hmr RALT PG_UP  &kp RGUI
 &trans  &trans  &trans    &trans    &trans     &trans    &trans  &kp DELETE       &kp END          &kp PG_DN        &trans    &trans
                           &trans    &none      &trans    &trans  &trans           &trans
-            >;
-        };
-
-        sim_layer {
-            label = "SYM";
-            bindings = <
-        &kp EXCL         &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp ASTRK  &trans  &trans
-        &trans           &trans  &trans    &trans    &trans       &trans     &trans    &trans     &trans  &trans
-&trans  &kp NON_US_HASH  &trans  &trans    &trans    &trans       &trans     &trans    &trans     &trans  &kp LS(NON_US_HASH)  &trans
-                                 &trans    &trans    &mo 4        &trans     &none     &trans
             >;
         };
 
