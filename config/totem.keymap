@@ -67,12 +67,12 @@
 
         tilde {
             bindings = <&hml LA(LCTRL) TILDE>;
-            key-positions = <12 11>;
+            key-positions = <11 12>;
         };
 
         eq {
             bindings = <&hml LC(LSHFT) EQUAL>;
-            key-positions = <13 12>;
+            key-positions = <12 13>;
         };
 
         lbrac {
@@ -95,11 +95,6 @@
             key-positions = <23 24>;
         };
 
-        pct {
-            bindings = <&kp PERCENT>;
-            key-positions = <28 29>;
-        };
-
         combo_apos {
             bindings = <&kp SQT>;
             key-positions = <6 7>;
@@ -110,44 +105,20 @@
             key-positions = <7 8>;
         };
 
-        combo_underscore {
-            bindings = <&kp UNDERSCORE>;
-            key-positions = <28 27>;
+        plus {
+            bindings = <&kp PLUS>;
+            key-positions = <5 15>;
         };
-
-
-        rpar {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <7 17>;
-        };
-
-
-
-        rbrac {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <17 28>;
-        };
-
 
         rbrace {
             bindings = <&kp RIGHT_BRACE>;
             key-positions = <6 16>;
         };
 
-
-
-        gt {
-            bindings = <&kp LS(E)>;
-            key-positions = <27 16>;
+        rpar {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <7 17>;
         };
-
-
-
-        plus {
-            bindings = <&kp PLUS>;
-            key-positions = <15 5>;
-        };
-
 
         hyphen {
             bindings = <&hmr RS(RCTRL) MINUS>;
@@ -159,8 +130,25 @@
             key-positions = <17 18>;
         };
 
+        gt {
+            bindings = <&kp LS(E)>;
+            key-positions = <16 27>;
+        };
 
+        rbrac {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <17 28>;
+        };
 
+        combo_underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <27 28>;
+        };
+
+        pct {
+            bindings = <&kp PERCENT>;
+            key-positions = <28 29>;
+        };
     };
 
     behaviors {
