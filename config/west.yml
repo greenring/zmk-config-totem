@@ -6,10 +6,12 @@ manifest:
       url-base: https://github.com/urob
     - name: joelspadin
       url-base: https://github.com/joelspadin
+    - name: greenring
+      url-base: https://github.com/greenring
   projects:
     - name: zmk
-      remote: joelspadin
-      revision: caps-word
+      remote: greenring
+      revision: main
       import: app/west.yml
     - name: zmk-helpers
       remote: urob
