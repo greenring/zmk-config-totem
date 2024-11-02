@@ -66,7 +66,7 @@
         };
 
         tilde {
-            bindings = <&hml LA(LCTRL) TILDE>;
+            bindings = <&hml LA(LCTRL) PIPE>;
             key-positions = <11 12>;
         };
 
@@ -86,7 +86,7 @@
         };
 
         pipe {
-            bindings = <&kp PIPE>;
+            bindings = <&kp LS(NON_US_BSLH)>;
             key-positions = <14 25>;
         };
 
@@ -126,7 +126,7 @@
         };
 
         at {
-            bindings = <&hmr RC(RALT) AT_SIGN>;
+            bindings = <&hmr RC(RALT) DOUBLE_QUOTES>;
             key-positions = <17 18>;
         };
 
