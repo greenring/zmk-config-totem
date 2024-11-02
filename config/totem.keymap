@@ -21,6 +21,15 @@
     release-after-ms = <900>;
 };
 
+&caps_word {
+    no-default-keys;
+    continue-list = <UNDERSCORE BACKSPACE DELETE SQT MINUS>;
+    shift-list = 
+        <R T Y U I O P>,
+        <A S D F G H J K L SEMICOLON>,
+        <X C V B N M COMMA PERIOD SLASH>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
