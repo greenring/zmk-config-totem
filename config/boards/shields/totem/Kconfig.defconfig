@@ -1,10 +1,10 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_TOTEM_DONGLE
+if SHIELD_TOTEM_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "TOTEM Dongle"
+    default "TOTEM"
     
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
@@ -14,7 +14,7 @@ config ZMK_USB
 
 endif
 
-if SHIELD_TOTEM_LEFT || SHIELD_TOTEM_RIGHT || SHIELD_TOTEM_DONGLE
+if SHIELD_TOTEM_LEFT || SHIELD_TOTEM_RIGHT
 
 config ZMK_SPLIT
     default y
