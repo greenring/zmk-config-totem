@@ -138,7 +138,7 @@
         hyphen {
             bindings = <&hmr RS(RCTRL) MINUS>;
             key-positions = <16 17>;
-            require-prior-idle-ms = <100>;
+            timeout-ms = 32;
         };
 
         at {
