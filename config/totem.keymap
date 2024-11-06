@@ -175,6 +175,11 @@
             bindings = <&kp PERCENT>;
             key-positions = <28 29>;
         };
+
+        bootloader {
+            bindings = <&bootloader>;
+            key-positions = <32 34 35 37>;
+        };
     };
 
     behaviors {
