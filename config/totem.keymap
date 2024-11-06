@@ -180,6 +180,11 @@
             bindings = <&bootloader>;
             key-positions = <32 34 35 37>;
         };
+
+        question {
+            bindings = <&kp LS(Q)>;
+            key-positions = <22 23>;
+        };
     };
 
     behaviors {
