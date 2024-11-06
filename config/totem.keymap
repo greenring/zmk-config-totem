@@ -99,7 +99,7 @@
 
         pipe {
             bindings = <&kp LS(NON_US_BSLH)>;
-            key-positions = <14 25>;
+            key-positions = <11 22>;
         };
 
         colon {
