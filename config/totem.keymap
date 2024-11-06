@@ -73,11 +73,13 @@
         tilde {
             bindings = <&hml LA(LCTRL) PIPE>;
             key-positions = <11 12>;
+            timeout-ms = <16>;
         };
 
         eq {
             bindings = <&hml LC(LSHFT) EQUAL>;
             key-positions = <12 13>;
+            timeout-ms = <16>;
         };
 
         hash {
@@ -113,6 +115,7 @@
         quote {
             bindings = <&kp AT>;
             key-positions = <7 8>;
+            timeout-ms = <16>;
         };
 
         plus {
@@ -144,6 +147,7 @@
         at {
             bindings = <&hmr RC(RALT) DOUBLE_QUOTES>;
             key-positions = <17 18>;
+            timeout-ms = <16>;
         };
 
         gt {
@@ -164,6 +168,7 @@
         underscore {
             bindings = <&kp UNDERSCORE>;
             key-positions = <27 28>;
+            timeout-ms = <16>;
         };
 
         pct {
