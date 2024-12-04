@@ -185,6 +185,11 @@
             bindings = <&kp LS(Q)>;
             key-positions = <22 23>;
         };
+
+        grave {
+            bindings = <&kp GRAVE>;
+            key-positions = <8 9>;
+        };
     };
 
     behaviors {
