@@ -84,7 +84,7 @@
 
         hash {
             bindings = <&kp NON_US_HASH>;
-            key-positions = <11 22>;
+            key-positions = <14 25>;
         };
 
         lbrac {
@@ -179,6 +179,16 @@
         bootloader {
             bindings = <&bootloader>;
             key-positions = <32 34 35 37>;
+        };
+
+        question {
+            bindings = <&kp LS(Q)>;
+            key-positions = <22 23>;
+        };
+
+        grave {
+            bindings = <&kp GRAVE>;
+            key-positions = <8 9>;
         };
     };
 
