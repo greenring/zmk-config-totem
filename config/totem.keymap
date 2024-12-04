@@ -84,7 +84,7 @@
 
         hash {
             bindings = <&kp NON_US_HASH>;
-            key-positions = <11 22>;
+            key-positions = <14 25>;
         };
 
         lbrac {
