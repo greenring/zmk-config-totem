@@ -235,7 +235,7 @@
                  &kp Q        &kp W        &kp E         &kp R         &kp T          &kp Y          &kp U         &kp I         &kp O        &kp P
                  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G          &kp H          &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMICOLON
 &kp NON_US_BSLH  &kp Z        &kp X        &kp C         &kp V         &kp B          &kp N          &kp M         &kp COMMA     &kp PERIOD   &kp SLASH            &kp SQT
-                                           &kp DELETE    &lt 1 TAB     &lt 2 ENTER    &kp BACKSPACE  &kp SPACE     &smart_shft
+                                           &kp DELETE    &lt 1 TAB     &lt 2 ENTER    &kp BACKSPACE  &lt 3 SPACE   &smart_shft
             >;
         };
 
