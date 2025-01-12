@@ -192,7 +192,7 @@
         };
 
         gaming_layer_toggle {
-            bindings = <&mo 4>;
+            bindings = <&tog 4>;
             key-positions = <20 31>;
         };
     };
