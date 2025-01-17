@@ -195,6 +195,11 @@
             bindings = <&tog 1>;
             key-positions = <20 31>;
         };
+
+        pound {
+            bindings = <&kp LS(NUMBER_3)>;
+            key-positions = <26 15>;
+        };
     };
 
     behaviors {
