@@ -178,7 +178,7 @@
 
         bootloader {
             bindings = <&bootloader>;
-            key-positions = <32 34 35 37>;
+            key-positions = <32 34 35 37 33 36>;
         };
 
         question {
@@ -199,6 +199,11 @@
         pound {
             bindings = <&kp LS(NUMBER_3)>;
             key-positions = <26 15>;
+        };
+
+        reset {
+            bindings = <&sys_reset>;
+            key-positions = <32 34 35 37>;
         };
     };
 
