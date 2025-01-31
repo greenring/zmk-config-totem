@@ -203,7 +203,7 @@
 
         space {
             bindings = <&kp SPACE>;
-            key-positions = <13 11>;
+            key-positions = <22 24>;
         };
     };
 
