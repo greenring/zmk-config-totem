@@ -200,6 +200,11 @@
             bindings = <&kp LS(NUMBER_3)>;
             key-positions = <26 15>;
         };
+
+        space {
+            bindings = <&kp SPACE>;
+            key-positions = <22 24>;
+        };
     };
 
     behaviors {
