@@ -36,6 +36,18 @@
     combos {
         compatible = "zmk,combos";
 
+        mwheel_up {
+            bindings = <&msc MOVE_Y(20)>;
+            key-positions = <7 17>;
+            layers = <5>;
+        };
+
+        mwheel_down {
+            bindings = <&msc MOVE_Y(-20)>;
+            key-positions = <17 28>;
+            layers = <5>;
+        };
+
         combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
@@ -208,18 +220,6 @@
         space {
             bindings = <&kp SPACE>;
             key-positions = <22 24>;
-        };
-
-        mwheel_up {
-            bindings = <&msc MOVE_Y(20)>;
-            key-positions = <7 17>;
-            layers = <5>;
-        };
-
-        mwheel_down {
-            bindings = <&msc MOVE_Y(-20)>;
-            key-positions = <17 28>;
-            layers = <5>;
         };
     };
 
