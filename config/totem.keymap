@@ -212,13 +212,13 @@
         };
 
         mwheel_up {
-            bindings = <&msc SCRL_UP>;
+            bindings = <&msc MOVE_Y 20>;
             key-positions = <7 17>;
             layers = <5>;
         };
 
         mwheel_down {
-            bindings = <&msc SCRL_DOWN>;
+            bindings = <&msc MOVE_Y -20>;
             key-positions = <17 28>;
             layers = <5>;
         };
