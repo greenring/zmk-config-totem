@@ -7,5 +7,3 @@ include:
     shield: settings_reset
   - board: seeeduino_xiao_ble
     shield: totem_dongle
-    snippet: zmk-usb-logging
-
