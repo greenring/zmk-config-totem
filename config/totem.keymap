@@ -210,7 +210,7 @@
         };
 
         mwheel_up {
-            bindings = <&msc MOVE_Y(20)>;
+            bindings = <&msc MOVE_Y(-20)>;
             key-positions = <7 17>;
             layers = <5>;
         };
