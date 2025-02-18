@@ -216,7 +216,7 @@
         };
 
         mwheel_down {
-            bindings = <&msc MOVE_Y(-20)>;
+            bindings = <&kp GRAVE>;
             key-positions = <17 28>;
             layers = <5>;
         };
