@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/joelspadin
     - name: greenring
       url-base: https://github.com/greenring
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
   projects:
     - name: zmk
       remote: greenring
