@@ -6,5 +6,4 @@ include:
   - board: seeeduino_xiao_ble
     shield: settings_reset
   - board: seeeduino_xiao_ble
-    shield: totem_dongle
-
+    shield: totem_dongle rgbled_adapter
