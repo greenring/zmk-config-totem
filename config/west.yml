@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/joelspadin
     - name: greenring
       url-base: https://github.com/greenring
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
   projects:
     - name: zmk
       remote: greenring
@@ -15,6 +17,9 @@ manifest:
       import: app/west.yml
     - name: zmk-helpers
       remote: urob
+      revision: main
+    - name: zmk-rgbled-widget
+      remote: caksoylar
       revision: main
   self:
     path: config
