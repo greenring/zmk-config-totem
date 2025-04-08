@@ -283,10 +283,10 @@
         nav_layer {
             label = "NAV";
             bindings = <
-        &trans  &trans    &kp UP    &trans     &trans    &trans  &kp PRINTSCREEN  &kp SCROLLLOCK   &kp PAUSE_BREAK  &trans
-        &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans    &trans  &hmr RSHFT INS   &hmr RCTRL HOME  &hmr RALT PG_UP  &kp RGUI
-&trans  &trans  &trans    &trans    &trans     &trans    &trans  &kp DELETE       &kp END          &kp PG_DN        &trans    &trans
-                          &trans    &none      &trans    &trans  &trans           &trans
+        &trans  &trans              &kp UP           &trans             &trans    &trans  &kp PRINTSCREEN  &kp PG_UP         &trans         &trans
+        &trans  &hml LEFT_ALT LEFT  &hml LCTRL DOWN  &hml LSHIFT RIGHT  &trans    &trans  &hmr RSHFT HOME  &hmr RCTRL PG_DN  &hmr RALT END  &trans
+&trans  &trans  &trans              &trans           &trans             &trans    &trans  &trans           &trans            &trans         &trans  &trans
+                                    &trans           &none              &trans    &trans  &trans           &trans
             >;
         };
 
