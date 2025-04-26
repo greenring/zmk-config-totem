@@ -14,7 +14,30 @@ config ZMK_USB
 
 endif
 
+if SHIELD_TOTEM_BTLEFT
+
+config ZMK_KEYBOARD_NAME
+    default "TOTEM"
+    
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_USB
+	default y
+
+endif
+
 if SHIELD_TOTEM_LEFT || SHIELD_TOTEM_RIGHT || SHIELD_TOTEM_DONGLE
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_BLE
+	default y
+
+endif
+
+if SHIELD_TOTEM_BTLEFT || SHIELD_TOTEM_BTRIGHT
 
 config ZMK_SPLIT
     default y

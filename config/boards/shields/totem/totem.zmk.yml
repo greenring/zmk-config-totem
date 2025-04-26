@@ -10,3 +10,5 @@ siblings:
   - totem_left
   - totem_right
   - totem_dongle
+  - totem_btleft
+  - totem_btright
