@@ -274,10 +274,10 @@
         dvorak_layer {
             label = "DVORAK";
             bindings = <
-                 &kp SLASH      &kp COMMA    &kp PERIOD    &kp P         &kp Y          &kp F          &kp G         &kp C         &kp R            &kp L
-                 &hml LGUI A    &hml LALT O  &hml LCTRL E  &hml LSHFT U  &kp I          &kp D          &hmr RSHFT H  &hmr RCTRL T  &hmr LEFT_ALT N  &hmr RGUI S
-&kp NON_US_BSLH  &kp SEMICOLON  &kp Q        &kp J         &kp K         &kp X          &kp B          &kp M         &kp W         &kp V            &kp Z        &ind_bat
-                                             &lt 6 DELETE  &lt 3 TAB     &lt 4 ENTER    &kp BACKSPACE  &lt 5 SPACE   &smart_shft
+                       &kp SLASH      &kp COMMA    &kp PERIOD    &kp P         &kp Y          &kp F          &kp G         &kp C         &kp R            &kp L
+                       &hml LGUI A    &hml LALT O  &hml LCTRL E  &hml LSHFT U  &kp I          &kp D          &hmr RSHFT H  &hmr RCTRL T  &hmr LEFT_ALT N  &hmr RGUI S
+&lt 7 LG(NON_US_BSLH)  &kp SEMICOLON  &kp Q        &kp J         &kp K         &kp X          &kp B          &kp M         &kp W         &kp V            &kp Z        &ind_bat
+                                                   &lt 6 DELETE  &lt 3 TAB     &lt 4 ENTER    &kp BACKSPACE  &lt 5 SPACE   &smart_shft
             >;
         };
 
