@@ -60,6 +60,7 @@
         semicolon {
             bindings = <&kp Z>;
             key-positions = <2 3>;
+            layers = <0 2 4>;
         };
 
         dollar {
@@ -107,6 +108,7 @@
         lt {
             bindings = <&kp LS(W)>;
             key-positions = <13 24>;
+            layers = <0 2 4>;
         };
 
         pipe {
@@ -117,6 +119,7 @@
         colon {
             bindings = <&kp LS(Z)>;
             key-positions = <23 24>;
+            layers = <0 2 4>;
         };
 
         apos {
@@ -165,6 +168,7 @@
         gt {
             bindings = <&kp LS(E)>;
             key-positions = <16 27>;
+            layers = <0 2 4>;
         };
 
         rbrac {
@@ -196,6 +200,7 @@
         question {
             bindings = <&kp LS(Q)>;
             key-positions = <22 23>;
+            layers = <0 2 4>;
         };
 
         grave {
@@ -216,6 +221,36 @@
         space {
             bindings = <&kp SPACE>;
             key-positions = <22 24>;
+        };
+
+        dv_semi {
+            bindings = <&kp SEMI>;
+            key-positions = <2 3>;
+            layers = <1>;
+        };
+
+        dv_qmark {
+            bindings = <&kp QUESTION>;
+            key-positions = <22 23>;
+            layers = <1>;
+        };
+
+        dv_colon {
+            bindings = <&kp COLON>;
+            key-positions = <23 24>;
+            layers = <1>;
+        };
+
+        dv_lt {
+            bindings = <&kp LESS_THAN>;
+            key-positions = <13 24>;
+            layers = <1>;
+        };
+
+        dv_gt {
+            bindings = <&kp GT>;
+            key-positions = <16 27>;
+            layers = <1>;
         };
     };
 
