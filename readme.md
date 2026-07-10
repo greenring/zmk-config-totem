@@ -28,3 +28,33 @@ TOTEM is a 38 key column-staggered split keyboard running [ZMK](https://zmk.dev/
 - the keyboard should now appear as a mass storage device
 - drag'n'drop the `totem_left-seeeduino_xiao_ble-zmk.uf2` file from the archive onto the storage device
 - repeat this process with the right half and the `totem_right-seeeduino_xiao_ble-zmk.uf2` file.
+- for the dongle build, flash `totem_dongle-seeeduino_xiao_ble-zmk.uf2` the same way.
+
+## MONITORING BATTERY LEVELS ON WINDOWS (DONGLE SETUP)
+
+The dongle sends keystrokes to your PC over USB, but it also fetches the left/right
+battery levels over BLE and can expose them via a standard Bluetooth Battery Service
+(this is what `CONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY`/`_FETCHING` in
+`config/totem.conf` do). To read that from Windows, pair the dongle over Bluetooth
+*in addition to* the USB connection — the USB link keeps handling keystrokes, the
+Bluetooth link is only used to read battery levels.
+
+1. Flash the updated firmware (this repo already enables the required config).
+2. Put the dongle into BLE pairing mode: hold the `ADJ` layer and press `BT NEXT`
+   (`&bt BT_NXT`) to advertise on an open Bluetooth profile.
+3. On Windows: **Settings > Bluetooth & devices > Add device > Bluetooth**, and pair
+   with "TOTEM Dongle". Keystrokes will keep coming through USB — you don't need to
+   switch the active output.
+4. Install [zmk-battery-center](https://github.com/kot149/zmk-battery-center), a
+   system tray app that reads ZMK's split battery levels over BLE and shows
+   central/left/right battery percentages with low-battery notifications:
+   ```powershell
+   powershell -ExecutionPolicy Bypass -Command "iex (irm 'https://raw.githubusercontent.com/kot149/zmk-battery-center/main/scripts/install_win.ps1')"
+   ```
+   or download the `*-setup.exe` installer from its
+   [releases page](https://github.com/kot149/zmk-battery-center/releases).
+5. Launch it — once the dongle is paired, it should appear in the tray with
+   left/right/central battery percentages.
+
+If Windows shows a stale battery percentage, re-open the Bluetooth device's "more
+options" details page to force it to re-read, or unpair/re-pair the dongle.
