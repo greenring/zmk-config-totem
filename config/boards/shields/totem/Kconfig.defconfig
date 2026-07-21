@@ -5,11 +5,30 @@ if SHIELD_TOTEM_DONGLE
 
 config ZMK_KEYBOARD_NAME
     default "TOTEM Dongle"
-    
+
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 config ZMK_USB
+	default y
+
+endif
+
+if SHIELD_TOTEM_DONGLE_NN
+
+config ZMK_KEYBOARD_NAME
+    default "TOTEM Dongle"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_USB
+	default y
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_BLE
 	default y
 
 endif
