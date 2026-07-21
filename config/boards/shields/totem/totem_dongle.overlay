@@ -44,8 +44,46 @@
 };
 
 &xiao_spi { status = "disabled"; };
-&xiao_i2c { status = "disabled"; };
 &xiao_serial { status = "disabled"; };
+
+/*
+ * The OLED for the zmk-dongle-display shield only exists when a display build
+ * is selected (the `dongle_display` shield sets CONFIG_ZMK_DISPLAY=y). For the
+ * displayless `totem_dongle` build this whole block is preprocessed away, so I2C
+ * stays disabled exactly as before.
+ */
+#ifdef CONFIG_ZMK_DISPLAY
+
+/ {
+    chosen {
+        zephyr,display = &oled;
+    };
+};
+
+&xiao_i2c {
+    status = "okay";
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <64>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+        segment-remap;
+        com-invdir;
+        inversion-on;
+        prechargep = <0x22>;
+    };
+};
+
+#else
+
+&xiao_i2c { status = "disabled"; };
+
+#endif
 
 
 

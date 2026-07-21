@@ -28,3 +28,21 @@ TOTEM is a 38 key column-staggered split keyboard running [ZMK](https://zmk.dev/
 - the keyboard should now appear as a mass storage device
 - drag'n'drop the `totem_left-seeeduino_xiao_ble-zmk.uf2` file from the archive onto the storage device
 - repeat this process with the right half and the `totem_right-seeeduino_xiao_ble-zmk.uf2` file.
+
+## DONGLE DISPLAY
+
+This config builds the dongle in two variants, so the same repo covers a plain
+dongle and one with an OLED:
+
+- `totem_dongle rgbled_adapter` &rarr; displayless dongle (unchanged).
+- `totem_dongle dongle_display rgbled_adapter` &rarr; dongle with a 128x64 I2C
+  OLED, using [englmaxi/zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display).
+
+Flash `totem_dongle dongle_display-seeeduino_xiao_ble-zmk.uf2` onto the dongle
+that has the screen; keep the plain `totem_dongle-...uf2` for a displayless one.
+
+The screen is a standard 128x64 SSD1306 OLED wired to the XIAO's I2C pins (SDA/SCL
+= D4/D5, plus 3V3 and GND) at address `0x3c`. Alongside the layer, modifiers,
+output status and bongo-cat widgets, it shows the **battery level of the left and
+right halves** (driven by the split central battery fetching already enabled in
+`config/totem.conf`).

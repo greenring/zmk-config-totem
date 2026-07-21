@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/greenring
     - name: caksoylar
       url-base: https://github.com/caksoylar
+    - name: englmaxi
+      url-base: https://github.com/englmaxi
   projects:
     - name: zmk
       remote: greenring
@@ -21,5 +23,9 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
+    - name: zmk-dongle-display
+      remote: englmaxi
+      # pinned for reproducible CI; bump to a newer commit / 'main' to update
+      revision: 2bb333f87136d33e94a49d86236ed9ec254a8060
   self:
     path: config

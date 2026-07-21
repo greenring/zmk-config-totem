@@ -46,3 +46,13 @@ config ZMK_BLE
 	default y
 
 endif
+
+# Compatibility shim for englmaxi/zmk-dongle-display.
+#
+# The module still gates its battery widget on the old CONFIG_ZMK_BATTERY symbol,
+# but current ZMK renamed that to CONFIG_ZMK_BATTERY_REPORTING. Without this the
+# left/right peripheral battery widget silently compiles out. Alias the old name
+# to the new one so the battery levels are shown. Harmless once the module updates.
+config ZMK_BATTERY
+    bool
+    default y if ZMK_BATTERY_REPORTING && SHIELD_DONGLE_DISPLAY
