@@ -27,7 +27,8 @@ manifest:
       revision: fdcd7cac82a6c0cb1311bce9bc21ba2be4004019
     - name: zmk-dongle-display
       remote: englmaxi
-      # pinned for reproducible CI; bump to a newer commit / 'main' to update
-      revision: 2bb333f87136d33e94a49d86236ed9ec254a8060
+      # v0.3 targets ZMK v0.3 / Zephyr 3.5 (LVGL 8), which is what this ZMK is
+      # pinned to. 'main' requires Zephyr 4.1 / LVGL 9 and will not compile here.
+      revision: v0.3
   self:
     path: config
