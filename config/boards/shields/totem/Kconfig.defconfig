@@ -56,3 +56,17 @@ endif
 config ZMK_BATTERY
     bool
     default y if ZMK_BATTERY_REPORTING && SHIELD_DONGLE_DISPLAY
+
+# Enable the I2C bus and the SSD1306 OLED driver whenever a display build is
+# selected (only the `totem_dongle dongle_display` combo sets ZMK_DISPLAY). On
+# this ZMK's Zephyr the driver is not auto-enabled by the devicetree node alone,
+# so mirror ZMK's own OLED shields (microdox, lily58, ...) and turn it on here.
+if ZMK_DISPLAY
+
+config I2C
+    default y
+
+config SSD1306
+    default y
+
+endif # ZMK_DISPLAY
