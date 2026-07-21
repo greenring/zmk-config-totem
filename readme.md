@@ -35,11 +35,13 @@ This config builds the dongle in two variants, so the same repo covers a plain
 dongle and one with an OLED:
 
 - `totem_dongle rgbled_adapter` &rarr; displayless dongle (unchanged).
-- `totem_dongle dongle_display rgbled_adapter` &rarr; dongle with a 128x64 I2C
-  OLED, using [englmaxi/zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display).
+- `totem_dongle totem_oled dongle_display rgbled_adapter` &rarr; dongle with a
+  128x64 I2C OLED, using [englmaxi/zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display).
+  `totem_oled` is a small local shield that just adds the OLED node, so the plain
+  dongle build stays untouched.
 
-Flash `totem_dongle dongle_display-seeeduino_xiao_ble-zmk.uf2` onto the dongle
-that has the screen; keep the plain `totem_dongle-...uf2` for a displayless one.
+Flash `totem_dongle totem_oled dongle_display-seeeduino_xiao_ble-zmk.uf2` onto the
+dongle that has the screen; keep the plain `totem_dongle-...uf2` for a displayless one.
 
 The screen is a standard 128x64 SSD1306 OLED wired to the XIAO's I2C pins (SDA/SCL
 = D4/D5, plus 3V3 and GND) at address `0x3c`. Alongside the layer, modifiers,

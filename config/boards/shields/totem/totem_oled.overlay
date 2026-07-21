@@ -1,0 +1,34 @@
+/*
+ * Overlay-only shield that adds the OLED for the zmk-dongle-display setup.
+ *
+ * It is layered on top of `totem_dongle` (which disables xiao_i2c) only for the
+ * display build, so the plain `totem_dongle` build is left completely unchanged.
+ * Devicetree is preprocessed before Kconfig, so this cannot be gated on a
+ * CONFIG_ symbol from within an overlay - keeping it in a separate shield that
+ * is only added to the display build is what makes it conditional.
+ */
+
+/ {
+    chosen {
+        zephyr,display = &oled;
+    };
+};
+
+&xiao_i2c {
+    status = "okay";
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <64>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+        segment-remap;
+        com-invdir;
+        inversion-on;
+        prechargep = <0x22>;
+    };
+};

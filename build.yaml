@@ -12,4 +12,4 @@ include:
   - board: seeeduino_xiao_ble
     shield: totem_dongle rgbled_adapter
   - board: seeeduino_xiao_ble
-    shield: totem_dongle dongle_display rgbled_adapter
+    shield: totem_dongle totem_oled dongle_display rgbled_adapter
