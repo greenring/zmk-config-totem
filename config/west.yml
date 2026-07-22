@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/greenring
     - name: caksoylar
       url-base: https://github.com/caksoylar
+    - name: englmaxi
+      url-base: https://github.com/englmaxi
   projects:
     - name: zmk
       remote: greenring
@@ -20,6 +22,13 @@ manifest:
       revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: main
+      # pinned pre-central-battery; newer main needs zmk/split/central.h which
+      # this ZMK revision doesn't have. Keep in sync with the debug branch.
+      revision: fdcd7cac82a6c0cb1311bce9bc21ba2be4004019
+    - name: zmk-dongle-display
+      remote: englmaxi
+      # v0.3 targets ZMK v0.3 / Zephyr 3.5 (LVGL 8), which is what this ZMK is
+      # pinned to. 'main' requires Zephyr 4.1 / LVGL 9 and will not compile here.
+      revision: v0.3
   self:
     path: config

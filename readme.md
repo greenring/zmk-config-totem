@@ -28,3 +28,34 @@ TOTEM is a 38 key column-staggered split keyboard running [ZMK](https://zmk.dev/
 - the keyboard should now appear as a mass storage device
 - drag'n'drop the `totem_left-seeeduino_xiao_ble-zmk.uf2` file from the archive onto the storage device
 - repeat this process with the right half and the `totem_right-seeeduino_xiao_ble-zmk.uf2` file.
+
+## BUILD MATRIX
+
+The repo covers three setups. Flash the matching `.uf2` files from the Actions
+artifact:
+
+**1. Bluetooth pair (no dongle), with RGB**
+- `totem_btleft rgbled_adapter` + `totem_btright rgbled_adapter` (both on XIAO).
+
+**2. Dongle without display, with RGB**
+- `totem_dongle rgbled_adapter` (XIAO dongle)
+- halves: `totem_left rgbled_adapter` + `totem_right rgbled_adapter`.
+
+**3. Dongle with display, no RGB**
+- `totem_dongle_nn dongle_display` on a **nice!nano** (`nice_nano_v2`).
+- halves: `totem_left` + `totem_right` (no `rgbled_adapter`).
+
+The RGB status widget only exists where `rgbled_adapter` is included, so it is
+absent from the display setup - the OLED shows status instead.
+
+### Dongle display
+
+The display uses [englmaxi/zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display)
+(pinned to `v0.3` for this ZMK's LVGL 8). The dongle you bought is a **nice!nano**,
+not a XIAO, so its firmware targets `nice_nano_v2` and the OLED sits on the
+nice!nano's I2C (`pro_micro_i2c`) at address `0x3c`. If your dongle wires the
+screen to different pins, adjust `totem_dongle_nn.overlay`.
+
+Alongside the layer, modifiers, output status and bongo-cat widgets, it shows the
+**battery level of the left and right halves** (via the split central battery
+fetching enabled in `config/totem.conf`).

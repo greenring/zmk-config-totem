@@ -1,13 +1,26 @@
 include:
-  - board: seeeduino_xiao_ble
-    shield: totem_left rgbled_adapter
-  - board: seeeduino_xiao_ble
-    shield: totem_right rgbled_adapter
-  - board: seeeduino_xiao_ble
-    shield: settings_reset
+  # --- Bluetooth pair: two halves paired directly, no dongle (with RGB) ---
   - board: seeeduino_xiao_ble
     shield: totem_btleft rgbled_adapter
   - board: seeeduino_xiao_ble
     shield: totem_btright rgbled_adapter
+
+  # --- Dongle without display: XIAO dongle + halves (with RGB) ---
   - board: seeeduino_xiao_ble
     shield: totem_dongle rgbled_adapter
+  - board: seeeduino_xiao_ble
+    shield: totem_left rgbled_adapter
+  - board: seeeduino_xiao_ble
+    shield: totem_right rgbled_adapter
+
+  # --- Dongle with display: nice!nano OLED dongle + halves (no RGB) ---
+  - board: nice_nano_v2
+    shield: totem_dongle_nn dongle_display
+  - board: seeeduino_xiao_ble
+    shield: totem_left
+  - board: seeeduino_xiao_ble
+    shield: totem_right
+
+  # --- Utility ---
+  - board: seeeduino_xiao_ble
+    shield: settings_reset

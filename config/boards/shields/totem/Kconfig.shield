@@ -15,3 +15,6 @@ config SHIELD_TOTEM_BTRIGHT
 
 config SHIELD_TOTEM_DONGLE
 	def_bool $(shields_list_contains,totem_dongle)
+
+config SHIELD_TOTEM_DONGLE_NN
+	def_bool $(shields_list_contains,totem_dongle_nn)
