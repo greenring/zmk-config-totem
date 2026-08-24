@@ -10,8 +10,10 @@ include:
     shield: totem_dongle rgbled_adapter
   - board: seeeduino_xiao_ble
     shield: totem_left rgbled_adapter
-  - board: seeeduino_xiao_ble
-    shield: totem_right rgbled_adapter
+  # DIAGNOSTIC: this target is dropped on this branch. totem_right.conf carries
+  # the USB-logging settings and is shared by every totem_right target, but only
+  # the snippet build below supplies the cdc-acm-uart node those settings need,
+  # so building this one too just fails Kconfig.
 
   # --- Dongle with display: nice!nano OLED dongle + halves (no RGB) ---
   - board: nice_nano_v2
