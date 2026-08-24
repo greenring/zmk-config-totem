@@ -20,6 +20,7 @@ include:
     shield: totem_left
   - board: seeeduino_xiao_ble
     shield: totem_right
+    snippet: zmk-usb-logging   # DIAGNOSTIC - do not merge
 
   # --- Utility ---
   - board: seeeduino_xiao_ble
