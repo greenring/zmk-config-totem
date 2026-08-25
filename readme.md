@@ -50,12 +50,17 @@ absent from the display setup - the OLED shows status instead.
 
 ### Dongle display
 
-The display uses [englmaxi/zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display)
-(pinned to `v0.3` for this ZMK's LVGL 8). The dongle you bought is a **nice!nano**,
+The display uses a vendored copy of
+[englmaxi/zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display)
+(from `v0.3` for this ZMK's LVGL 8, with a fixed battery widget - see
+`config/boards/shields/dongle_display/README.md`). The dongle you bought is a **nice!nano**,
 not a XIAO, so its firmware targets `nice_nano_v2` and the OLED sits on the
 nice!nano's I2C (`pro_micro_i2c`) at address `0x3c`. If your dongle wires the
 screen to different pins, adjust `totem_dongle_nn.overlay`.
 
 Alongside the layer, modifiers, output status and bongo-cat widgets, it shows the
 **battery level of the left and right halves** (via the split central battery
-fetching enabled in `config/totem.conf`).
+fetching enabled in `config/totem.conf`). A half that is disconnected (e.g. its
+battery ran flat) shows `--` instead of its entry disappearing. Note that a
+half plugged into USB reads ~100% while charging - the charger's voltage, not
+the true state of charge.

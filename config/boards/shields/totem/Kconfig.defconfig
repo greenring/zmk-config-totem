@@ -66,16 +66,6 @@ config ZMK_BLE
 
 endif
 
-# Compatibility shim for englmaxi/zmk-dongle-display.
-#
-# The module still gates its battery widget on the old CONFIG_ZMK_BATTERY symbol,
-# but current ZMK renamed that to CONFIG_ZMK_BATTERY_REPORTING. Without this the
-# left/right peripheral battery widget silently compiles out. Alias the old name
-# to the new one so the battery levels are shown. Harmless once the module updates.
-config ZMK_BATTERY
-    bool
-    default y if ZMK_BATTERY_REPORTING && SHIELD_DONGLE_DISPLAY
-
 # Enable the I2C bus and the SSD1306 OLED driver whenever a display build is
 # selected (only the `totem_dongle dongle_display` combo sets ZMK_DISPLAY). On
 # this ZMK's Zephyr the driver is not auto-enabled by the devicetree node alone,
