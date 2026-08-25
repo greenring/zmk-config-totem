@@ -50,10 +50,10 @@ absent from the display setup - the OLED shows status instead.
 
 ### Dongle display
 
-The display uses a vendored copy of
-[englmaxi/zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display)
-(from `v0.3` for this ZMK's LVGL 8, with a fixed battery widget - see
-`config/boards/shields/dongle_display/README.md`). The dongle you bought is a **nice!nano**,
+The display uses [our fork](https://github.com/greenring/zmk-dongle-display)
+of [englmaxi/zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display),
+pinned to its `v0.3-battery-fix` branch: upstream `v0.3` (for this ZMK's
+LVGL 8) plus a fixed battery widget. The dongle you bought is a **nice!nano**,
 not a XIAO, so its firmware targets `nice_nano_v2` and the OLED sits on the
 nice!nano's I2C (`pro_micro_i2c`) at address `0x3c`. If your dongle wires the
 screen to different pins, adjust `totem_dongle_nn.overlay`.

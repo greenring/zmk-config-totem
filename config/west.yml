@@ -25,9 +25,13 @@ manifest:
       # pinned pre-central-battery; newer main needs zmk/split/central.h which
       # this ZMK revision doesn't have. Keep in sync with the debug branch.
       revision: fdcd7cac82a6c0cb1311bce9bc21ba2be4004019
-  # englmaxi/zmk-dongle-display is no longer pulled in as a module: the
-  # dongle_display shield is vendored under boards/shields/dongle_display
-  # (from its v0.3, the LVGL 8 / Zephyr 3.5 version this ZMK needs) with a
-  # fixed battery widget. See that directory's README.
+    - name: zmk-dongle-display
+      remote: greenring
+      # our fork's v0.3-battery-fix branch: upstream v0.3 (LVGL 8 / Zephyr
+      # 3.5, matching this pinned ZMK - 'main' needs Zephyr 4.1 / LVGL 9)
+      # plus a fixed battery widget that re-reads each half's level from the
+      # central instead of trusting coalesced events, shows disconnected
+      # halves as '--', and drops the phantom dongle entry.
+      revision: 7af54c6103b050d21ee7a49eed1ebecb6c4ea33c
   self:
     path: config
